@@ -2,7 +2,9 @@ FROM node:alpine
 
 WORKDIR /skill
 
-COPY index.js package.json package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
+COPY lib/*.cljs ./lib/
+COPY *.cljs ./
 
-ENTRYPOINT ["node index.js"]
+ENTRYPOINT ["node_modules/.bin/nbb","app.cljs"]

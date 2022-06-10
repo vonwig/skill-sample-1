@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@atomist/skill-bundler": "^0.1.43",
+    "@atomist/skill-logging": "^1.0.7",
     "@google-cloud/pubsub": "^3.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nbb": "^0.5.104"
   }
 }
