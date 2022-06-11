@@ -5,7 +5,7 @@
             [promesa.core :as p]))
 
 (defn handler [m]
-  (log/info m)
+  (log/info (pr-str m))
   ;; resolve a promise and add status
   (p/resolved (assoc m :atomist/status {:code 0 :reason "completed successfully"})))
 

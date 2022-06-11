@@ -1,12 +1,15 @@
 apiVersion: 1
 skill:
   name: skill-sample-1
-  namespace: atomist
-  displayName: Sample Skill \#1
+  namespace: vonwig
+  displayName: "Sample Skill #1"
   description: Sample Skill written in JavaScript
   author: Atomist
   license: Apache-2.0
+  iconUrl: https://raw.githubusercontent.com/vonwig/skill-sample-1/main/docs/images/icon.svg
+  homepageUrl: https://github.com/vonwig/skill-sample-1
+  longDescription: replace this
   artifacts:
     docker:
-      - name: go
-        image: slimslenderslacks/skill-sample-1
+      - name: skill-sample-1
+        image: gcr.io/atomist-skill-production/skill-sample-1@sha256:eeacfb81fd46ef681a32d13b9bcac76af36c530f70538f88935bdd54238656ba

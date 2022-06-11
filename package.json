@@ -13,6 +13,7 @@
     "@atomist/skill-logging": "^1.0.7",
     "@google-cloud/pubsub": "^3.0.1",
     "express": "^4.18.1",
+    "lodash": "^4.17.21",
     "nbb": "^0.5.104"
   }
 }
