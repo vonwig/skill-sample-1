@@ -1,0 +1,32 @@
+{:event-id "4797276526982872", 
+ :skill 
+ {:id "4363387c-83a7-4a44-a89c-76f6200bc00c", 
+  :namespace "vonwig", 
+  :name "skill-sample-1", 
+  :version "0.1.11", 
+  :configuration 
+  {:name "skill_sample_1", 
+   :enabled true}, 
+  :artifacts 
+  [{:args nil, 
+    :image "gcr.io/atomist-skill-production/skill-sample-1@sha256:256482be67707d06c3016c0151aa3991bccf4c270e34ff793b02285fb3966769", 
+    :__typename "AtomistSkillDockerArtifact", 
+    :name "skill-sample-1", 
+    :resources nil, 
+    :env nil, :command nil}], 
+  :platform "docker"}, 
+ :secrets 
+ [{:uri "atomist://api-key", 
+   :value ""}], 
+ :type "datalog_subscription_result", 
+ :trace-id "478cbee2545a1b5c906e5bee150afaf7", 
+ :correlation_id "1dd74be2-c6de-4569-be2f-e0e15d372696.oMoJ9Iq6Ehr7SNBK7ShtG", 
+ :log_url "https://go.atomist.com/log/AQ1K5FIKA/1dd74be2-c6de-4569-be2f-e0e15d372696/oMoJ9Iq6Ehr7SNBK7ShtG", 
+ :team_id "AQ1K5FIKA", 
+ :registration 
+ {:name "vonwig/skill-sample-1"}, 
+ :subscription 
+ {:name "on_push.edn", 
+  :tx 13194139605416, 
+  :after-basis-t 72104, 
+  :result [[{:schema/entity-type "git/commit", :git.commit/repo #:git.repo{:name "altdservice", :default-branch "main", :org {:github.org/installation-token "ghs_yZz0BXnQzXAKqG4u05OfEbeBBepu8D44drke", :git.org/name "vonwig", :base-url "https://api.github.com", :git.provider/url "https://github.com"}}, :git.commit/author #:git.user{:name "Jim Clark", :login "slimslenderslacks", :emails [#:email.email{:address "jim@atomist.com"}]}, :git.commit/sha "409ba9962421cec6752a879e8a02e8a4ae99ebaa", :git.commit/message "next version -> 48", :git.ref/refs [#:git.ref{:name "main", :type #:db{:id 83562883711153, :ident "git.ref.type/branch"}}]}]]}}
