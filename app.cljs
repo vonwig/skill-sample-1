@@ -19,4 +19,4 @@
   (p/resolved {:atomist/status {:code 0 :reason "completed successfully"}}))
 
 ;; start the http listener with handler
-((.-start api) (mw/clj-adapter-middleware handler))
+(api/start (mw/clj-adapter-middleware handler))
