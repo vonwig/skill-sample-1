@@ -10,7 +10,7 @@
                             :task (let [s (slurp "./skill.yaml")
                                         output (str/replace s (re-pattern "(image: .*@)(.*)") (format "$1%s" -extract-digest))]
                                     (spit "skill.yaml" output))}        
-         -increment-version "0.1.18"
+         -increment-version "0.1.20"
          register {:depends [docker-build docker-push -increment-version -increment-digest -bundle]
                     :task (shell {:dir "/Users/slim/atmhq/bb_scripts"} (format "bb cli register-skill --team AQ1K5FIKA --version %s" -increment-version))}
          test-webhook (shell "curl https://slimslenderslacks:password@webhook.atomist.com/atomist/resource/9c8aa94d-9c14-4d68-a2c6-000c57232995 -d '{\"a\": \"b\"}'")}}
