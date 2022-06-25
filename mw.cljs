@@ -1,6 +1,14 @@
 (ns mw
+  (:refer-clojure :exclude [pr-str])
   (:require [promesa.core :as p]
             ["@atomist/skill-entry-point$default" :as api]))
+
+(def pr-str (comp api/prStr (fn [m] (clj->js m :keyword-fn #(str (namespace %) "/" (name %))))))
+(comment
+  (def x [{:docker.image/image "a"
+           :db/id 45}])
+  (pr-str x)
+  (api/resolvePayload #js {}))
 
 (defn clj-adapter-middleware
   "the handlers are pure js but this converts to clj maps"

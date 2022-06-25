@@ -1,0 +1,13 @@
+[:find
+ (pull ?image [:docker.image/digest
+               {:docker.image/repository
+                [:docker.repository/host
+                 :docker.repository/repository]}])
+ (pull ?commit [{:git.commit/author 
+                 [{:git.user/emails
+                   [:email.email/address]}]}])
+ :in $ $before-db % ?ctx
+ :where
+ (attributes-tx ?ctx ?image :sbom/state _)
+ [?image :sbom/state :sbom.state/INDEXED]
+ [?image :docker.image/commit ?commit]]

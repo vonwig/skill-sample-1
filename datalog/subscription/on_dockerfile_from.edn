@@ -1,0 +1,27 @@
+[:find
+ (pull
+  ?commit
+  [{:git.commit/repo
+    [:git.repo/name
+     :git.repo/default-branch
+     {:git.repo/org
+      [:github.org/installation-token
+       :git.org/name
+       :git.org/provider-base-url
+       :git.provider/url]}]}
+   {:git.commit/author
+    [:git.user/name
+     :git.user/login]}
+   :git.commit/sha
+   :git.commit/message])
+ (pull ?file [*])
+ :in $ $before-db % ?ctx
+ :where
+ (push-tx ?ctx ?commit ?ref)
+ [?commit :git.commit/file ?file]
+ ;; TODO default branch only
+ [?instruction :docker.file.line/file ?file]
+ [?instruction :docker.file.line/instruction "FROM"]
+ [?instruction :docker.file.from/repository ?repository]
+ [?repository :docker.repository/host ?registry-host]
+ [(= ?registry-host "hub.docker.com")]]
