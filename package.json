@@ -8,10 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@atomist/skill-entry-point": "^0.1.8"
-  },
   "devDependencies": {
     "@atomist/skill-bundler": "^0.1.43"
+  },
+  "dependencies": {
+    "@atomist/skill-entry-point": "^0.1.17"
   }
 }

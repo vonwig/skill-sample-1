@@ -1,0 +1,14 @@
+{:attributes
+ {:docker.image/check                {:db.entity/attrs [:git.commit.signature/commit]}
+  :docker.image.check/image          {:db/valueType    :db.type/ref
+                                      :db/doc          "Reference to the image being checked"
+                                      :db/cardinality  :db.cardinality/one}
+  :docker.image.check/name           {:db/valueType    :db.type/string
+                                      :db/doc          "name of docker image check"
+                                      :db/cardinality  :db.cardinality/one}
+  :docker.image.check/status         {:db/valueType    :db.type/ref
+                                      :db/doc          "passed or failed"
+                                      :db/cardinality  :db.cardinality/one}
+  :docker.image.check.status/PASS    {:db/doc "image has been checked and it passed"}
+  :docker.image.check.status/FAIL    {:db/doc "image has been checked and it failed"}
+  :docker.image.check.status/MISSING {:db/doc "image was not checked"}}}
