@@ -12,6 +12,6 @@
     "@atomist/skill-bundler": "^0.1.43"
   },
   "dependencies": {
-    "@atomist/skill-entry-point": "^0.1.17"
+    "@atomist/skill-entry-point": "^0.1.21"
   }
 }
