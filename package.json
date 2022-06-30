@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@atomist/skill-bundler": "^0.1.43"
+    "@atomist/skill-bundler": "^0.1.44"
   },
   "dependencies": {
     "@atomist/skill-entry-point": "^0.1.21"

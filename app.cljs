@@ -33,10 +33,11 @@
                    :vonwig.testing.observation/id id
                    :vonwig.testing.observation/seen-by-subscriber true}]))
      :else
-    ;; unrecognized
+     ;; unrecognized
      (p/resolved true))
    (fn [_] 
      ;; promise should return a status message
      {:atomist/status {:code 0 :reason "completed successfully"}} )))
+
 ;; start the http listener with handler
 (api/start (mw/clj-adapter-middleware handler))
