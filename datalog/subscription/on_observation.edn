@@ -1,5 +1,0 @@
-[:find ?id ?webhook-value
- :in $ before-db % ?ctx
- :where
- [attributes-tx ?ctx ?observation :vonwig.testing.observation/webhook-value ?webhook-value]
- [?observation :vonwig.testing.observation/id ?id]]

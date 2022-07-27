@@ -1,5 +1,6 @@
 FROM node:alpine
 
+LABEL com.docker.skill.api.version="container/v2"
 WORKDIR /skill
 
 COPY package.json package-lock.json ./

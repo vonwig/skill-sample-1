@@ -13,11 +13,14 @@
     (p/let [result (handler
                     (-> obj
                         (js->clj :keywordize-keys true)
-                        (dissoc :logger :publish))
-                    :logger (.-logger obj)
+                        (dissoc :logger :transact :tx))
+                    :logger (fn [level s]
+                              (case level
+                                :debug (.debug (.-logger obj) s)
+                                :error (.error (.-logger obj) s)
+                                :warn (.warn (.-logger obj) s)
+                                (.info (.-logger obj) s)))
                     :transact (fn [datoms] (-> datoms
                                                pr-str
-                                               ((partial api/entitiesPayload (.-correlation_id obj)))
-                                               ((.-publish obj)))))]
-      (set! (.-status obj) (clj->js (:atomist/status result)))
-      obj)))
+                                               ((.-tx obj)))))]
+      (clj->js (update (:atomist/status result) :state name)))))
