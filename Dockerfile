@@ -1,4 +1,4 @@
-FROM node:alpine@sha256:9b435939937b0deef5c1f6fcfd1f265aa7a77574388b671fda322e662744472d
+FROM node:alpine@sha256:df76a9449df49785f89d517764012e3396b063ba3e746e8d88f36e9f332b1864
 
 LABEL com.docker.skill.api.version="container/v2"
 WORKDIR /skill
